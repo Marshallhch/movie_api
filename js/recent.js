@@ -1,6 +1,7 @@
 $(function(){
 
-  let currentPage = 0;
+  let currentPage = 1;
+  const pageNumLength = $(".numBtns button.pageNum").length;
 
   function getData(page){
     let getDatas = [];
@@ -28,7 +29,7 @@ $(function(){
       }
     });
     currentPage = page;
-    //console.log(typeof(page));
+    //console.log(typeof(currentPage));
   }
 
   $(".numBtns button.pageNum").click(function(){
@@ -37,9 +38,35 @@ $(function(){
     $(".recent-movie-wrap").remove();
     $(".loading").show();
     getData(btnValue);
+
+    let btnIdx = $(this).index();
+
+    $(".numBtns button").removeClass("active");
+    $(".numBtns button").eq(btnIdx).addClass("active");
   });
 
-  getData(1);
+  function goToPrevNext(a, b){
+    if(currentPage == a){
+      return false;
+    } else {
+      $(".recent-movie-wrap").remove();
+      getData(b);
+      $(".loading").show();
+      $(".numBtns button").removeClass("active");
+      $(".numBtns button").eq(currentPage).addClass("active");
+    }
+  }
+
+  $(".numBtns button.prev").click(function(){
+    goToPrevNext(1, currentPage - 1);
+  });
+
+  $(".numBtns button.next").click(function(){
+    goToPrevNext(pageNumLength, currentPage + 1);
+  });
+
+
+  $(".numBtns button").eq(1).trigger("click");
 
   $(document).ajaxComplete(function(){
     $(".loading").hide();

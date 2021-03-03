@@ -7,4 +7,6 @@
 
 .numContainer{width:100%; height:auto; _margin:auto; max-width:980px; margin:20px auto 50px;}
 
+.numBtns button.active, .numBtns button.arrow{background:#bbb; color:#fff;}
+
 .loading{width:100%; height:608px; display:flex; justify-content: center; align-items: center;}

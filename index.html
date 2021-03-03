@@ -5,10 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie APP</title>
+    <link rel="stylesheet" href="/movie_api/plugin/lightslider.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="search-box">
+    <div class="genre-section">
+      <div class="action">
+        <div class="action-contents" id="actionSlide">
+          <!-- <div class="slide-box">
+            <div>
+              <img src="new-arrival-2.jpg" alt="" />
+              <div class="slide-txt">
+                <h3>Movie Title</h3>
+                <p class="rating">Rating : 8.0</p>
+              </div>
+              <a href="#">Details</a>
+            </div>
+          </div> -->
+          <!-- end of slide-box -->
+        </div>
+      </div>
+      <div class="romance">
+        <div class="romance-contents" id="romanceSlide"></div>
+      </div>
+      <div class="drama">
+        <div class="drama-contents" id="dramaSlide"></div>
+      </div>
+    </div>
+
+    <!-- <div class="search-box">
       <input type="text" / class="searchInput"><button
         type="button"
         class="sendBtn"
@@ -19,7 +44,7 @@
         <img src="/movie_api/loading.gif" alt="" />
       </div>
       <div class="container clear"></div>
-      <!-- end of container -->
+
     </div>
 
     <div class="numContainer">
@@ -32,10 +57,12 @@
         <button type="button" class="pageNum" value="5">5</button>
         <button type="button" class="next arrow">next</button>
       </div>
-    </div>
+    </div> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    <script src="/movie_api/plugin/lightslider.js"></script>
+    <script src="/movie_api/js/genre.js"></script>
+    <!-- <script>
       $(function () {
         function searchMovie() {
           let searchResult = $(".searchInput").val();
@@ -60,6 +87,6 @@
         });
       });
     </script>
-    <script src="/movie_api/js/recent.js"></script>
+    <script src="/movie_api/js/recent.js"></script> -->
   </body>
 </html>
